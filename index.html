@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>منصة اختيار التخصص - تجريبي</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .note {
+      background: #e0f7fa;
+      padding: 15px;
+      border: 1px solid #00acc1;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #006064;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>منصة اختيار التخصص - عرض تجريبي</h2>
+
+    <div class="note">
+      <strong>كيف تعمل المنصة:</strong><br>
+      - يدخل الطالب رقم تسجيله.<br>
+      - إذا كان الرقم مقبول، تظهر باقي الحقول.<br>
+      - الطالب يملأ بياناته ويختار تخصصه.<br>
+      - يتم إرسال البيانات للإدارة تلقائيًا لتكوين تقرير شامل.<br>
+    </div>
+
+    <input type="text" id="regNumber" placeholder="أدخل رقم تسجيلك">
+    <button onclick="showForm()">تحقق</button>
+
+    <div id="formSection" style="display:none;">
+      <input type="text" placeholder="الاسم واللقب">
+      <input type="text" placeholder="الفوج">
+      <input type="email" placeholder="البريد الإلكتروني">
+      <input type="text" placeholder="رقم الهاتف">
+      <select>
+        <option value="">-- اختر التخصص --</option>
+        <option value="قانون عام">قانون عام</option>
+        <option value="قانون خاص">قانون خاص</option>
+      </select>
+      <button>تأكيد الاختيار</button>
+    </div>
+  </div>
+
+  <script>
+    function showForm() {
+      const regInput = document.getElementById('regNumber').value.trim();
+      if (regInput !== "") {
+        document.getElementById('formSection').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
